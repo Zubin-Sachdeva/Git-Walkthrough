@@ -55,20 +55,20 @@ The fig. above captures the 3 main sections of a Git project namely,
 cd to the directory you wanna start tracking and then run "git init"
 What does this do?
 * creates a sub directory named .git which has various folders inside it:
-  * objects: stores different Git Objects namely, 
+  * **objects:** stores different Git Objects namely, 
     * blob: similar to a file in unix parlance
     * tree: similar to folder
     * commit: specifies top level tree of the snapshot, commit author, timestamp and commit message
     * tag: generally points to a commit; never moves, points to the same commit (refs/tags)
-  * refs: help us track history from a particular commit. 3 main refs are there:
+  * **refs:** help us track history from a particular commit. 3 main refs are there:
     * branch: reference to the head (branch: refs/heads/<branch_name>) 
     * tag
     * remote: refs/remote/<remote_name>/<branch_name>; stores the value we last pushed in the remote for each branch
-  * HEAD: symbolic reference to the branch we're currently on
-  * Packfiles: created when "git gc" command is run (could be done manually) or when we push to the remote server; saves the
+  * **HEAD:** symbolic reference to the branch we're currently on
+  * **Packfiles:** created when "git gc" command is run (could be done manually) or when we push to the remote server; saves the
   difference between 2 almost similar file versions as delta rather than maintaining separate versions each time. Latest
   version is kept intact and the earlier version stored as delta to ensure faster access to the revised version.
-  * config:
+  * **config:**
     * Refspec: used for fetching content from remote to local repo
       * Pattern: +<src>:<dst>; <src> => pattern for references on remote side; <dst> => where those references will be tracked locally; "+" tells git to update the ref even if it's not fast-forward
   
@@ -106,7 +106,7 @@ git commit -am "commit_message"
 * From staging area: git rm <file_name>
 * From staging area, but not the working directory: git rm --cached <file_name>
 
-**Moving Files**
+**Moving Files:**
 "git rm" command helps us take care of file renaming. What would usually take 3 commands (mv <old_filename> <new_filename>, git rm <old_filename>, git add <new_filename>) is done single handedly via git rm <old_filename> <new_filename> 
 
 **Viewing Commit History:**
@@ -114,7 +114,7 @@ git commit -am "commit_message"
 * git log --pretty=oneline
 * git log -p => Would show diff below each commit; p stands for patch
 
-**Undoing Things**
+**Undoing Things:**
 git commit --amend (To add changes to the last commit like a file you forgot to stage; to change commit message of the last commit)
 
 Unstage a staged file: git reset HEAD <file_name>
